@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -18,6 +19,7 @@ public class Estacionamento {
 	private long idEstacionamento;
 	
 	@OneToMany
+	@JoinColumn(name = "idDispositivo")
 	private List<Dispositivo> dispositivos;
 	
 	@Column(columnDefinition = "VARCHAR(50)")
@@ -35,8 +37,9 @@ public class Estacionamento {
 	@Column(columnDefinition = "DOUBLE")
 	private Double longitude;
 	
-	@ManyToOne
-	private Universidade universidade;
+	/*@ManyToOne
+	@JoinColumn(name = "id_universidade")
+	private Universidade universidade;*/
 
 	public long getIdEstacionamento() {
 		return idEstacionamento;
@@ -93,7 +96,7 @@ public class Estacionamento {
 	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
-
+/*
 	public Universidade getUniversidade() {
 		return universidade;
 	}
@@ -101,5 +104,5 @@ public class Estacionamento {
 	public void setUniversidade(Universidade universidade) {
 		this.universidade = universidade;
 	}
-
+*/
 }
