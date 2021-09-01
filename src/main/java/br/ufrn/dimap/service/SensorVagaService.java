@@ -39,9 +39,10 @@ public class SensorVagaService {
 	}
 
 	public SensorVaga cadastrarSensor(SensorVaga sensorVaga, long idDispositivo) {
+		Dispositivo dispositivo = dispositivoService.listarDispositivosPorId(idDispositivo);
+		//dispositivo.getSensores().add(sensorVaga);
+		sensorVaga.setDispositivo(dispositivo);
 		SensorVaga sensorSalvo = sensorVagaRepository.save(sensorVaga);
-		System.out.println(sensorSalvo);
-		dispositivoService.adicionarSensor(idDispositivo, sensorVaga);
 		return sensorSalvo;
 	}	
 

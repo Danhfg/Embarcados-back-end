@@ -13,7 +13,7 @@ public class SensorVaga {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long idSensorVaga;
+	private long id_sensor_vaga;
 
 	@Column(columnDefinition = "BOOLEAN DEFAULT FALSE")
 	private Boolean ocupado;
@@ -24,16 +24,16 @@ public class SensorVaga {
 	@Column(columnDefinition = "VARCHAR(50)")
 	private String status;
 	
-	/*@ManyToOne
-	@JoinColumn(name = "idDispositivo")
-	private Dispositivo dispositivo;*/	
+	@ManyToOne
+	@JoinColumn(name = "id_dispositivo")
+	private Dispositivo dispositivo;
 
-	public long getIdSensorVaga() {
-		return idSensorVaga;
+	public long getId_sensor_vaga() {
+		return id_sensor_vaga;
 	}
 
-	public void setIdSensorVaga(long idSensorVaga) {
-		this.idSensorVaga = idSensorVaga;
+	public void setId_sensor_vaga(long id_sensor_vaga) {
+		this.id_sensor_vaga = id_sensor_vaga;
 	}
 
 	public Boolean getOcupado() {
@@ -59,7 +59,7 @@ public class SensorVaga {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-/*
+
 	public Dispositivo getDispositivo() {
 		return dispositivo;
 	}
@@ -67,5 +67,5 @@ public class SensorVaga {
 	public void setDispositivo(Dispositivo dispositivo) {
 		this.dispositivo = dispositivo;
 	}
-*/
+
 }

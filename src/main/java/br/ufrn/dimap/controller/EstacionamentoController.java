@@ -44,8 +44,8 @@ public class EstacionamentoController {
 	@PostMapping(value = "/estacionamento/cadastrar/{idUniversidade}")
 	public ResponseEntity<?> cadastrarEstacionamento(@PathVariable long idUniversidade, @RequestBody Estacionamento estacionamento)
 	{
-		estacionamentoService.cadastrarEstacionamento(idUniversidade, estacionamento);
-		return new ResponseEntity<>(HttpStatus.OK);
+		Estacionamento estacionamentoSalvo = estacionamentoService.cadastrarEstacionamento(idUniversidade, estacionamento);
+		return new ResponseEntity<>(estacionamentoSalvo, HttpStatus.OK);
 		
 	}
 

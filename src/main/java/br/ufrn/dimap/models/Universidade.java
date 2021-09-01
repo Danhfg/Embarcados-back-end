@@ -20,9 +20,9 @@ public class Universidade {
 	@Column(unique = true)
 	private String nome;
 
-	@OneToMany
+	/*@OneToMany
 	@JoinColumn(name = "idEstacionamentos")
-	private List<Estacionamento> estacionamentos;
+	private List<Estacionamento> estacionamentos;*/
 
 	public long getIdUniversidade() {
 		return idUniversidade;
@@ -39,7 +39,7 @@ public class Universidade {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
+/*
 	public List<Estacionamento> getEstacionamentos() {
 		return estacionamentos;
 	}
@@ -47,4 +47,5 @@ public class Universidade {
 	public void setEstacionamentos(List<Estacionamento> estacionamentos) {
 		this.estacionamentos = estacionamentos;
 	}
+*/
 }

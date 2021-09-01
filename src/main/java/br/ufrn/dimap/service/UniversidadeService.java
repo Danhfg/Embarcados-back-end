@@ -39,15 +39,15 @@ public class UniversidadeService {
 		return universidadeRepository.save(universidade);
 				
 	}
-	
+/*
 	public void adicionarEstacionamento(long idUniversidade, Estacionamento estacionamento) {
 		if(universidadeRepository.findById(idUniversidade).isPresent())
 		{
 			Universidade universidade = universidadeRepository.findById(idUniversidade).get();
-			universidade.getEstacionamentos().add(estacionamento);
+			//universidade.getEstacionamentos().add(estacionamento);
 			universidadeRepository.save(universidade);
 		}
 		else throw new ResourceNotFoundException("Nenhuma universidade com id " + " encontrada!");
 	}
-
+*/
 }
