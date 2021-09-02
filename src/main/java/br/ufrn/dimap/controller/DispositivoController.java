@@ -43,8 +43,8 @@ public class DispositivoController {
 	@PostMapping(value = "/dispositivo/cadastrar/{idEstacionamento}")
 	public ResponseEntity<?> cadastrarDispositivo(@PathVariable long idEstacionamento, @RequestBody Dispositivo dispositivo)
 	{
-		dispositivoService.cadastrar(idEstacionamento, dispositivo);
-		return new ResponseEntity<>(HttpStatus.OK);
+		Dispositivo dispositivoSalvo = dispositivoService.cadastrar(idEstacionamento, dispositivo);
+		return new ResponseEntity<>(dispositivoSalvo, HttpStatus.OK);
 	}
 	
 }

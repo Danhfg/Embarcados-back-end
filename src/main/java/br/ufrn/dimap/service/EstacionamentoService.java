@@ -34,20 +34,20 @@ public class EstacionamentoService {
 			return estacionamentoRepository.findById(idEstacionamento).get();
 		else throw new ResourceNotFoundException("Nenhum Estacionamento com id " + " encontrado!");
 	}
-	
+/*
 	@Transactional
 	public void adicionarDispositivo(long idEstacionamento, Dispositivo dispositivo)
 	{
 		if (estacionamentoRepository.findById(idEstacionamento).isPresent())
 		{
 			Estacionamento estacionamento = estacionamentoRepository.findById(idEstacionamento).get();
-			estacionamento.getDispositivos().add(dispositivo);
+			//estacionamento.getDispositivos().add(dispositivo);
 			estacionamentoRepository.save(estacionamento);
 			
 		}
 		else throw new ResourceNotFoundException("Nenhum Estacionamento com id " + " encontrado!");
 	}
-
+*/
 	public List<Estacionamento> listarEstacionamentos() {
 		List<Estacionamento> estacionamentos = estacionamentoRepository.findAll();
 		if(estacionamentos == null || estacionamentos.isEmpty())
@@ -56,9 +56,10 @@ public class EstacionamentoService {
 	}
 
 	@Transactional
-	public void cadastrarEstacionamento(long idUniversidade, Estacionamento estacionamento) {
-		estacionamentoRepository.save(estacionamento);
-		universidadeService.adicionarEstacionamento(idUniversidade, estacionamento);
+	public Estacionamento cadastrarEstacionamento(long idUniversidade, Estacionamento estacionamento) {
+		Universidade universidade = universidadeService.listarUniversidadPorId(idUniversidade);
+		estacionamento.setUniversidade(universidade);
+		return estacionamentoRepository.save(estacionamento);
 	}
 
 }

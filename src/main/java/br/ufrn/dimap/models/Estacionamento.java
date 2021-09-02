@@ -18,9 +18,9 @@ public class Estacionamento {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idEstacionamento;
 	
-	@OneToMany
-	@JoinColumn(name = "idDispositivo")
-	private List<Dispositivo> dispositivos;
+	/*@OneToMany
+	@JoinColumn(name = "id_dispositivo")
+	private List<Dispositivo> dispositivos;*/
 	
 	@Column(columnDefinition = "VARCHAR(50)")
 	private String setor;
@@ -37,9 +37,9 @@ public class Estacionamento {
 	@Column(columnDefinition = "DOUBLE")
 	private Double longitude;
 	
-	/*@ManyToOne
+	@ManyToOne
 	@JoinColumn(name = "id_universidade")
-	private Universidade universidade;*/
+	private Universidade universidade;
 
 	public long getIdEstacionamento() {
 		return idEstacionamento;
@@ -48,7 +48,7 @@ public class Estacionamento {
 	public void setIdEstacionamento(long idEstacionamento) {
 		this.idEstacionamento = idEstacionamento;
 	}
-
+/*
 	public List<Dispositivo> getDispositivos() {
 		return dispositivos;
 	}
@@ -56,7 +56,7 @@ public class Estacionamento {
 	public void setDispositivos(List<Dispositivo> dispositivos) {
 		this.dispositivos = dispositivos;
 	}
-
+*/
 	public String getSetor() {
 		return setor;
 	}
@@ -96,7 +96,7 @@ public class Estacionamento {
 	public void setLongitude(Double longitude) {
 		this.longitude = longitude;
 	}
-/*
+
 	public Universidade getUniversidade() {
 		return universidade;
 	}
@@ -104,5 +104,5 @@ public class Estacionamento {
 	public void setUniversidade(Universidade universidade) {
 		this.universidade = universidade;
 	}
-*/
+
 }

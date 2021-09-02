@@ -46,21 +46,22 @@ public class DispositivoService {
 
 	@Transactional
 	public Dispositivo cadastrar(long idEstacionamento, Dispositivo dispositivo) {
+		Estacionamento estacionamento = estacionamentoService.listarEstacionamentoPorId(idEstacionamento);
+		dispositivo.setEstacionamento(estacionamento);
 		Dispositivo dipositivoSalvo = dispositivoRepository.save(dispositivo);
-		estacionamentoService.adicionarDispositivo(idEstacionamento, dipositivoSalvo);
 		return dipositivoSalvo;
 	}
 	
-	@Transactional
+	/*@Transactional
 	public void adicionarSensor(long idDispositivo, SensorVaga sensorvaga)
 	{
 		if(dispositivoRepository.findById(idDispositivo).isPresent())
 		{
 			Dispositivo disp = dispositivoRepository.findById(idDispositivo).get();
-			disp.getSensores().add(sensorvaga);
+			//disp.getSensores().add(sensorvaga);
 			dispositivoRepository.save(disp);
 		}
 		else throw new ResourceNotFoundException("Nenhum Dispositivo com id " + "encontrado!");
-	}
+	}*/
 
 }
