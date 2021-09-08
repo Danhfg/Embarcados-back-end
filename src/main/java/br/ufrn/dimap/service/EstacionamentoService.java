@@ -27,6 +27,10 @@ public class EstacionamentoService {
 		this.estacionamentoRepository = estacionamentoRepository;
 		this.universidadeService = universidadeService;
 	}
+	
+	public List<Estacionamento> listarEstacionamentosPorUniversidade(long idUniversidade){
+		return estacionamentoRepository.findAllByUniversidadeId(idUniversidade);
+	}
 
 
 	public Estacionamento listarEstacionamentoPorId(long idEstacionamento) {

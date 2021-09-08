@@ -40,6 +40,10 @@ public class Estacionamento {
 	@ManyToOne
 	@JoinColumn(name = "id_universidade")
 	private Universidade universidade;
+	
+	public Estacionamento() {
+		
+	}
 
 	public long getIdEstacionamento() {
 		return idEstacionamento;

@@ -34,6 +34,13 @@ public class EstacionamentoController {
 		return new ResponseEntity<>(estacionamentos, HttpStatus.OK);
 	}
 	
+	
+	@GetMapping(value="/estacionamentos/{idUniversidade}")
+	public ResponseEntity<?> listarEstacionamentoPorIdUniversidade(@PathVariable long idUniversidade){
+		List<Estacionamento> estacionamentos = estacionamentoService.listarEstacionamentosPorUniversidade(idUniversidade);
+		return new ResponseEntity<>(estacionamentos, HttpStatus.OK);
+	}
+	
 	@GetMapping(value = "/estacionamento/{idEstacionamento}")
 	public ResponseEntity<?> listarEstacionamentoPorId(@PathVariable long idEstacionamento)
 	{

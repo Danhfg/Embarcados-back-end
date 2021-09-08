@@ -14,7 +14,10 @@ public interface EstacionamentoRepository extends JpaRepository<Estacionamento, 
 
     @Query(nativeQuery=true, value="SELECT * FROM estacionamento WHERE estacionamento.vagas_nao_preferenciais > 0")
      List<Estacionamento> findAllWhereVagasNaoPreferenciais();
-
+    
+    @Query(nativeQuery = true, value="SELECT * FROM estacionamento WHERE estacionamento.id_universidade = ?1")
+    List<Estacionamento> findAllByUniversidadeId(Long idUniversidade);
+    
      Optional<Estacionamento> findBySetor(String setor);
 
 }

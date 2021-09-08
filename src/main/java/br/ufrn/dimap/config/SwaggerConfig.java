@@ -23,6 +23,6 @@ public class SwaggerConfig {
 	
 	@SuppressWarnings("deprecation")
 	private ApiInfo apiInfo() {
-		return new ApiInfo("embarcados", "End-points da API do projeto de embarcados", "0.1", "", "danielhenriquefg@gmail.com", "Grupo 1", "http://embarcados.dimap.ufrn.br/");
+		return new ApiInfo("embarcados", "End-points da API do projeto de embarcados", "0.1", "", "", "Grupo 1", "http://embarcados.dimap.ufrn.br/");
 	}
 }

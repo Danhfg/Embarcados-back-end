@@ -100,8 +100,8 @@ public class AppService {
         if(universidade.isEmpty()){
             throw new ResourceNotFoundException("Universidade não encontrada");
         }
-
-        return universidade.get().getEstacionamentos();
+        return new ArrayList<>();
+//        return universidade.get().getEstacionamentos();
 
     }
     /*public String gerarUrlRelatorio(Date dataInicio, Date dataFim, long idEstacionamento){
