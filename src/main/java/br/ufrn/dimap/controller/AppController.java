@@ -10,7 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -81,5 +83,12 @@ public class AppController {
         }
 
         return new ResponseEntity<>(estacionamentos, HttpStatus.OK);
+    }
+    
+    @GetMapping(value="gerar-relatorio")
+    public ResponseEntity<?> gerarUrlRelatorio(@RequestBody LocalDate inicio,@RequestBody LocalDate fim,
+            @RequestBody long idEstacionamento)
+    {
+    	return new ResponseEntity<>("https://estacionamentos.ufrn.edu.br/relatorio"+idEstacionamento, HttpStatus.OK);
     }
 }
